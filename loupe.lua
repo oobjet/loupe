@@ -1,6 +1,6 @@
 -- loupe : innovative looper
 -- v1.0.0 @objet
--- llllllll.co/t/22222
+-- local version
 
 engine.name = 'PolySub'
 m = midi.connect() -- midi input
