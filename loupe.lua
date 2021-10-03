@@ -53,9 +53,9 @@ params:add{type = "number", id = "fx_midi", name = "fx midi note", min = 60, max
 
 function init()
   -- initialization
-  -- recordhead / playhead = 1
+  -- DRYHEAD (recordhead / playhead) = 1
   -- additional playhead = 2
-  -- readfx = 3
+  -- FXHEAD (readfx) = 3
   for i = 1,3 do
     softcut.enable(i,1)
     softcut.buffer(i,1)
@@ -120,7 +120,6 @@ function record()
   elseif state == "recording" then
     state = "playing"
     loop_length = recordheadpos
-    print (loop_length)
     softcut.rec(1,0) -- recordhead off
     softcut.position(1,0) -- start playing from the start
     softcut.loop_end(1,loop_length) -- define end point
